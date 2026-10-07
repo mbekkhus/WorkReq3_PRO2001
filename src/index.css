@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  background-color: #f4f2ee;
+  color: #252222;
+}
+
+.book-card {
+  border: 1px solid #ded8d1;
+  border-radius: 12px;
+  background-color: #fffdfa;
+  overflow: hidden;
+}
+
+.book-cover {
+  padding: 20px 20px 8px;
+}
+
+.book-cover-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.book-card .card-body {
+  padding: 24px;
+}
+
+@media (max-width: 767px) {
+  .book-card {
+    max-width: 380px;
+    margin-inline: auto;
+  }
+}
