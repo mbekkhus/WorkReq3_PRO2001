@@ -13,21 +13,37 @@ export default function BookCard({
   onToggleRead
 }: BookCardProps) {
   return (
-    <Card className="book-card h-100">
+    <Card
+      className={`book-card h-100${isRead ? ' is-read' : ''}${book.id === 'medusa' ? ' book-card--medusa' : ''}`}
+    >
       <div className="book-cover">
-        <Card.Img
-          src={book.image}
-          alt={`Cover of ${book.title}`}
-          loading="lazy"
-          className="book-cover-image"
-        />
+        <div className="book-cover-inner">
+
+          <Card.Img
+            src={book.image}
+            alt={`Cover of ${book.title}`}
+            loading="lazy"
+            className="book-cover-image"
+          />
+
+          {book.id === 'medusa' && (
+            <span className="release-badge">
+              Norwegian release
+              <strong>27 Oct 2026</strong>
+            </span>
+          )}
+
+          <span className="read-badge" aria-hidden="true">
+            Case closed
+          </span>
+        </div>
       </div>
 
       <Card.Body className="d-flex flex-column">
-        <p className="text-secondary small">
+        <p className="book-case-label">
           {book.seriesNumber === null
-            ? 'Standalone novel'
-            : `Joona Linna · Book ${book.seriesNumber}`}
+            ? 'Standalone · Special case'
+            : `Joona Linna · Case ${String(book.seriesNumber).padStart(2, '0')}`}
         </p>
 
         <Card.Title as="h2" className="fs-4">
@@ -38,14 +54,12 @@ export default function BookCard({
 
         <Button
           variant="outline-dark"
-          className="mt-auto align-self-start"
+          className="reading-button mt-auto align-self-start"
           aria-pressed={isRead}
           aria-label={`Mark ${book.title} as ${isRead ? 'unread' : 'read'}`}
           onClick={() => onToggleRead(book.id)}
         >
-          <span aria-hidden="true">{isRead ? '✓' : '🔪'}</span>
-          {' '}
-          {isRead ? 'Read' : 'Mark as read'}
+          {isRead ? 'Case closed ✓' : 'Close the case'}
         </Button>
       </Card.Body>
     </Card>

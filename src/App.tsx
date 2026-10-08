@@ -8,12 +8,18 @@ export default function App() {
 
   return (
     <Container as="main" className="py-5">
-      <header className="mb-4">
-        <h1>One More Chapter</h1>
-        <p>A shelf full of suspense. Explore the books of Lars Kepler.</p>
+      <header className="gallery-header mb-5">
+        <div>
+          <p className="header-label">Lars Kepler · Reading collection</p>
+          <h1>The Kepler Files</h1>
+          <p>Twelve books. How many cases have you closed?</p>
+        </div>
 
-        <p aria-live="polite">
-          {readCount} of {books.length} books read
+        <p className="reading-progress" aria-live="polite">
+          <span className="reading-progress-count">
+            {readCount} / {books.length}
+          </span>
+          <span>books read</span>
         </p>
       </header>
 

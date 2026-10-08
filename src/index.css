@@ -1,18 +1,68 @@
 body {
   margin: 0;
-  background-color: #f4f2ee;
+  background-color: #f3f3f2;
   color: #252222;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  padding-bottom: 24px;
+  border-bottom: 1px solid #cdd0d1;
+}
+
+header h1 {
+  margin-bottom: 16px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.gallery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.gallery-header>div>p {
+  color: #54212a;
+}
+
+.reading-progress {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 12px 18px;
+  border-left: 1px solid #702d38;
+  color: #57504b;
+  font-size: 0.85rem;
+}
+
+.reading-progress-count {
+  display: block;
+  color: #702d38;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.4rem;
+  line-height: 1.2;
 }
 
 .book-card {
-  border: 1px solid #ded8d1;
-  border-radius: 12px;
-  background-color: #fffdfa;
-  overflow: hidden;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  color: #252222;
+  box-shadow: none;
+  overflow: visible;
 }
 
 .book-cover {
-  padding: 20px 20px 8px;
+  padding: 0 12px;
+}
+
+.book-cover-inner {
+  position: relative;
 }
 
 .book-cover-image {
@@ -21,15 +71,157 @@ body {
   aspect-ratio: 2 / 3;
   object-fit: contain;
   margin: 0 auto;
+  transition: filter 250ms ease;
+  filter: drop-shadow(0 5px 8px rgb(0 0 0 / 12%));
+}
+
+.book-card--medusa .book-cover-image {
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+
+.book-card.is-read .book-cover-image {
+  filter: saturate(60%) brightness(88%) drop-shadow(0 5px 8px rgb(0 0 0 / 12%));
 }
 
 .book-card .card-body {
-  padding: 24px;
+  padding: 24px 12px 0;
+}
+
+.book-case-label {
+  margin-bottom: 12px;
+  color: #702d38;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.book-card .card-title {
+  margin-bottom: 16px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.book-card .card-text {
+  color: #57504b;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.read-badge {
+  position: absolute;
+  right: 12px;
+  bottom: 24px;
+  padding: 8px 12px;
+  border: 2px solid #702d38;
+  border-radius: 3px;
+  background-color: #fffdfa;
+  color: #702d38;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 12%);
+  opacity: 0;
+  transform: rotate(-8deg) scale(1.15);
+  transition: opacity 180ms ease, transform 180ms ease;
+  pointer-events: none;
+}
+
+.book-card.is-read .read-badge {
+  opacity: 1;
+  transform: rotate(-8deg) scale(1);
+}
+
+.release-badge {
+  position: absolute;
+  top: 12px;
+  left: 24px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: rgb(35 24 40 / 85%);
+  color: #fff3f5;
+  font-size: 0.65rem;
+  line-height: 1.5;
+  text-shadow: none;
+}
+
+.release-badge strong {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.reading-button {
+  --bs-btn-color: #702d38;
+  --bs-btn-border-color: #702d38;
+  --bs-btn-hover-color: #fffdfa;
+  --bs-btn-hover-bg: #702d38;
+  --bs-btn-hover-border-color: #702d38;
+  --bs-btn-active-color: #fffdfa;
+  --bs-btn-active-bg: #54212a;
+  --bs-btn-active-border-color: #54212a;
+  --bs-btn-focus-shadow-rgb: 112, 45, 56;
+
+  padding: 9px 16px;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.reading-button[aria-pressed="true"] {
+  color: #fffdfa;
+  background-color: #702d38;
+  border-color: #702d38;
+}
+
+.gallery-header .header-label {
+  margin-bottom: 12px;
+  color: #702d38;
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .book-cover-image,
+  .read-badge {
+    transition: none;
+  }
 }
 
 @media (max-width: 767px) {
   .book-card {
     max-width: 380px;
     margin-inline: auto;
+  }
+
+  header h1 {
+    font-size: 2.25rem;
+  }
+
+  .gallery-header {
+    gap: 12px;
+  }
+
+  .gallery-header>div {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .reading-progress {
+    margin-top: -12px;
+    padding: 3px 12px;
+    font-size: 0.65rem;
+  }
+
+  .reading-progress-count {
+    font-size: 1rem;
   }
 }
