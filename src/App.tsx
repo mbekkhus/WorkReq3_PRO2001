@@ -10,9 +10,9 @@ export default function App() {
     <Container as="main" className="py-5">
       <header className="gallery-header mb-5">
         <div>
-          <p className="header-label">Lars Kepler · Reading collection</p>
+          <p className="header-label">A collection of suspense</p>
           <h1>The Kepler Files</h1>
-          <p>Twelve books. How many cases have you closed?</p>
+          <p>Explore the stories. Close the cases.</p>
         </div>
 
         <p className="reading-progress" aria-live="polite">

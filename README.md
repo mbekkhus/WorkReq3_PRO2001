@@ -77,11 +77,14 @@ Each column uses xs={12}, md={6} and lg={4}:
 - From 768px: two cards per row. 
 - From 992px: three cards per row. 
 
-The row uses g-5 for spacing between cards. 
+The row uses g-5 for spacing between cards.
 Custom CSS controls the card appearance and image spacing. 
 
 The cover areas use a 2:3 aspect ratio. 
-object-fit: contain keeps the entire cover visible without cropping. 
+object-fit: cover fills each area consistently, with slight cropping where cover proportions differ.
+All covers have matching rounded corners.  
+
+On mobile, the reading counter stays visible while scrolling.
 
 ## Reusable components and props 
 
@@ -116,9 +119,15 @@ Clicking a card's button updates both its status and the counter.
 - Reading-status controls use native buttons. 
 - aria-pressed communicates each button's selected state. 
 - Each button has an accessible label identifying the book and action. 
-- Decorative symbols are hidden from screen readers. 
+- The decorative "Case closed" stamp is hidden from screen readers.
 - The reading counter uses aria-live="polite". 
 - Book titles use h2 headings below the page's h1. 
+
+## Validation 
+
+- npm run lint completed with no warnings or errors.
+- npm run build completed successfully. 
+- The mobile layout and fixed reading counter were tested on a physical phone. 
 
 ## Image and content sources 
 

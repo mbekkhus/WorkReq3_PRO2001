@@ -27,8 +27,9 @@ header h1 {
   gap: 24px;
 }
 
-.gallery-header>div>p {
-  color: #54212a;
+.gallery-header>div>p:not(.header-label) {
+  color: #686469;
+  font-size: 0.95rem;
 }
 
 .reading-progress {
@@ -69,8 +70,9 @@ header h1 {
   display: block;
   width: 100%;
   aspect-ratio: 2 / 3;
-  object-fit: contain;
-  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
   transition: filter 250ms ease;
   filter: drop-shadow(0 5px 8px rgb(0 0 0 / 12%));
 }
@@ -198,27 +200,45 @@ header h1 {
 
 @media (max-width: 767px) {
   .book-card {
-    max-width: 380px;
+    width: 100%;
+    max-width: 320px;
     margin-inline: auto;
   }
 
-  header h1 {
-    font-size: 2.25rem;
-  }
-
   .gallery-header {
-    gap: 12px;
+    display: block;
+    padding-top: 36px;
+    text-align: center;
   }
 
   .gallery-header>div {
-    flex: 1;
     min-width: 0;
   }
 
-  .reading-progress {
-    margin-top: -12px;
-    padding: 3px 12px;
+  .gallery-header .header-label {
     font-size: 0.65rem;
+    letter-spacing: 0.08em;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .reading-progress {
+    position: fixed;
+    top: 40px;
+    right: 24px;
+    bottom: auto;
+    left: auto;
+    z-index: 1000;
+    width: max-content;
+    margin: 0;
+    padding: 8px 12px;
+    background-color: rgb(243 243 242 / 90%);
+    border-left: 1px solid #702d38;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    text-align: left;
   }
 
   .reading-progress-count {
