@@ -1,4 +1,4 @@
-# One More Chapter
+# The Kepler Files
 
 A responsive entertainment gallery featuring twelve books by Lars Kepler: 
 the eleven Joona Linna novels and the standalone thriller Playground. 
