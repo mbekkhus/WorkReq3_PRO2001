@@ -1,11 +1,10 @@
 # The Kepler Files
 
-A responsive entertainment gallery featuring twelve books by Lars Kepler: 
-the eleven Joona Linna novels and the standalone thriller Playground. 
+The Kepler Files is a responsive Entertainment Gallery app featuring twelve books by Lars Kepler: the eleven Joona Linna novels and the standalone thriller Playground.
 
-Built for Work Requirement 3 in PRO2001 - Interactive Frontend. 
+Built for Work Requirement 3 in PRO2001 - Interactive Frontend.
 
-The interface and descriptions are in English, while the book titles match the Norwegian editions shown on the covers. 
+The interface and descriptions are in English, while the book titles match the Norwegian editions shown on the covers.
 
 ## Run the app 
 
