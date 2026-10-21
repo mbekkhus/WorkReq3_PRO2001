@@ -97,21 +97,6 @@ Its props are defined in BookCardProps:
 
 Book data is stored separately in src/data/books.ts
 
-## Shared state and custom hook 
-
-The useReadingList hook manages an array of IDs for books marked as read.
-
-It returns: 
-
-- readBookIds: the IDs currently marked as read. 
-- toggleRead: a function that adds or removes a book ID. 
-- readCount: the number of books marked as read. 
-
-App calls the hook once and passes the status and toggle function to each BookCard through props. App also displays the reading counter. 
-
-This gives the cards and counter one shared source of state.
-Clicking a card's button updates both its status and the counter. 
-
 ## Accessibility 
 
 - Book covers have descriptive alternative text. 
