@@ -6,6 +6,8 @@ Built for Work Requirement 3 in PRO2001 - Interactive Frontend.
 
 The interface and descriptions are in English, while the book titles match the Norwegian editions shown on the covers.
 
+**Live demo:** https://mbekkhus.github.io/WorkReq3_PRO2001/
+
 ## Run the app 
 
 You need Node.js and npm installed. 
@@ -35,6 +37,7 @@ npm run dev
 ```
 
 Open the local URL displayed in the terminal. 
+
 
 ## Code checks
 
