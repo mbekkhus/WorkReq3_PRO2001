@@ -20,7 +20,7 @@ export default function BookCard({
         <div className="book-cover-inner">
 
           <Card.Img
-            src={book.image}
+            src={`${import.meta.env.BASE_URL}${book.image.replace(/^\//, '')}`}
             alt={`Cover of ${book.title}`}
             loading="lazy"
             className="book-cover-image"
