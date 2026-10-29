@@ -23,7 +23,7 @@ export default function App() {
         </p>
       </header>
 
-      <Row className="g-5">
+      <Row className="g-3 g-md-5">
         {books.map(book => (
           <Col xs={12} md={6} lg={4} key={book.id}>
             <BookCard
