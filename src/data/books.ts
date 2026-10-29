@@ -13,7 +13,7 @@ export const books: Book[] = [
     id: 'paganinikontrakten',
     title: 'Paganinikontrakten',
     image: '/images/paganinikontrakten.webp',
-    description: 'Two puzzeling deaths lead Joona Linna into a dangerous investigation. A floating boat and an empty room hold clues that refuse to add up.',
+    description: 'Two puzzling deaths lead Joona Linna into a dangerous investigation. A floating boat and an empty room hold clues that refuse to add up.',
     seriesNumber: 2
   },
 
