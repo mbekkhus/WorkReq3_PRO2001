@@ -86,7 +86,8 @@ export const books: Book[] = [
     title: 'Medusa',
     image: '/images/medusa.webp',
     description: 'Deaths inside a secure psychiatric institution send Saga Bauer undercover. Among dangerous patients, Joona Linna is her only contact with the outside world.',
-    seriesNumber: 11
+    seriesNumber: 11,
+    releaseDate: '2026-10-27'
   },
 
   {

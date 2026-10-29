@@ -77,12 +77,6 @@ header h1 {
   filter: drop-shadow(0 5px 8px rgb(0 0 0 / 12%));
 }
 
-.book-card--medusa .book-cover-image {
-  aspect-ratio: 2 / 3;
-  object-fit: cover;
-  object-position: center;
-}
-
 .book-card.is-read .book-cover-image {
   filter: saturate(60%) brightness(88%) drop-shadow(0 5px 8px rgb(0 0 0 / 12%));
 }

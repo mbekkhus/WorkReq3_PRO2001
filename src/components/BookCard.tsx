@@ -12,9 +12,18 @@ export default function BookCard({
   isRead,
   onToggleRead
 }: BookCardProps) {
+  const releaseLabel = book.releaseDate
+    ? new Date(book.releaseDate).toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+      timeZone: 'UTC'
+    })
+    : null
+
   return (
     <Card
-      className={`book-card h-100${isRead ? ' is-read' : ''}${book.id === 'medusa' ? ' book-card--medusa' : ''}`}
+      className={`book-card h-100${isRead ? ' is-read' : ''}`}
     >
       <div className="book-cover">
         <div className="book-cover-inner">
@@ -26,10 +35,10 @@ export default function BookCard({
             className="book-cover-image"
           />
 
-          {book.id === 'medusa' && (
+          {releaseLabel && (
             <span className="release-badge">
               Norwegian release
-              <strong>27 Oct 2026</strong>
+              <strong>{releaseLabel}</strong>
             </span>
           )}
 

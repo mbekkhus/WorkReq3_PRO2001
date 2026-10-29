@@ -4,4 +4,5 @@ export interface Book {
   image: string
   description: string
   seriesNumber: number | null
+  releaseDate?: string
 }
